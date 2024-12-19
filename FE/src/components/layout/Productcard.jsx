@@ -18,7 +18,7 @@ function Productcard({product,catename}) {
         <>
             <div className="bg-slate-300 p-3 text-md rounded-md cursor-pointer " onClick={navigateProductdetail(product.id)}>
               <div className='flex justify-center'>
-              <img className="rounded-md hover:scale-105 ease-in-out duration-500 w-full p-2" src={product.image} alt="" />
+              <img className="rounded-md hover:scale-105 ease-in-out duration-500 w-full p-2" src={"/"+ product.image} alt="" />
               </div>
                 <h1 className='mt-10'>{product.category.name}</h1>
                 <h1 className=''>{product.name}</h1>

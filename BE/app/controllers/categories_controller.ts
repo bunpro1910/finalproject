@@ -1,12 +1,7 @@
-import  fs  from 'fs';
-import Faculty from '#models/category'
-import User from '#models/user'
+
 import { PostCategoryForm } from '#validators/category'
 import type { HttpContext } from '@adonisjs/core/http'
-import Roles from '../Enum/Roles.js'
-import { Zone } from 'luxon'
-import Contribution from '#models/product'
-import JSZip from 'jszip'
+
 import Category from '#models/category';
 
 export default class CategoriesController {

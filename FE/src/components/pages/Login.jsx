@@ -19,22 +19,22 @@ export default function Login() {
       localStorage.setItem('token', x.data.token);
       toast.success(`Login success`)
       setTimeout(async () => {
-        
-       AuthService.profile().then(x=>{
-        const role= x.data.roleId
-        console.log(x.data)
-        switch (role) {
-          case 1:
-            window.location = 'http://localhost:3000/admin'
-            break
-          case 2:
-            window.location = 'http://localhost:3000/home'
-            break
-    
-        }
-       })
-   
-      
+
+        AuthService.profile().then(x => {
+          const role = x.data.roleId
+          console.log(x.data)
+          switch (role) {
+            case 1:
+              window.location = 'http://localhost:3000/admin'
+              break
+            case 2:
+              window.location = 'http://localhost:3000/home'
+              break
+
+          }
+        })
+
+
 
       }, 2000)
     }).catch(e => {

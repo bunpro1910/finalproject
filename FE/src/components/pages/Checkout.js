@@ -94,11 +94,11 @@ function Checkout() {
                             <div class="mb-3 flex flex-row gap-10">
                                 <div className='flex flex-col'>
                                     <label for="firstName">Full Name</label>
-                                    <TextField id="fullname" type='text' name='fullname' label="Fullname" variant="outlined" onChange={(e) => { user.fullname = e.target.value; setuser({ ...user }) }} value={user.fullname} required />
+                                    <TextField id="fullname" type='text' name='fullname' label="Fullname" variant="outlined" onChange={(e) => { user.fullname = e.target.value; setuser({ ...user }) }} value={user?.fullname} required />
                                 </div>
                                 <div class="flex flex-col">
                                     <label for="email">Email <span class="text-muted"></span></label>
-                                    <TextField id='email' type='text' name='email' label="Email" variant="outlined" onChange={(e) => { user.gmail = e.target.value; setuser({ ...user }) }} value={user.gmail} placeholder="you@example.com" />
+                                    <TextField id='email' type='text' name='email' label="Email" variant="outlined" onChange={(e) => { user.gmail = e.target.value; setuser({ ...user }) }} value={user?.gmail} placeholder="you@example.com" />
                                 </div>
                             </div>
                         </div>
@@ -110,11 +110,11 @@ function Checkout() {
                             <div class="mb-3 flex flex-row gap-10">
                                 <div className='flex flex-col'>
                                     <label for="phone">Phone Number <span class="text-muted"></span></label>
-                                    <TextField type="text" id='phone' name='phone' label="Phone" variant="outlined" value={user.phone_number} onChange={(e) => { user.phone_number = e.target.value; setuser({ ...user }) }} placeholder="Phone" />
+                                    <TextField type="text" id='phone' name='phone' label="Phone" variant="outlined" value={user?.phone_number} onChange={(e) => { user.phone_number = e.target.value; setuser({ ...user }) }} placeholder="Phone" />
                                 </div>
                                 <div class="flex flex-col">
                                     <label for="address">Address</label>
-                                    <TextField type="text"  label="Address" variant="outlined" value={user.address} onChange={(e) => { user.address = e.target.value; setuser({ ...user }) }} placeholder="address" />
+                                    <TextField type="text"  label="Address" variant="outlined" value={user?.address} onChange={(e) => { user.address = e.target.value; setuser({ ...user }) }} placeholder="address" />
                                 </div>
                             </div>
                         </div>

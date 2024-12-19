@@ -1,31 +1,32 @@
 import Product from '#models/product'
 import User from '#models/user';
-import {  PostProductForm, PutProductForm } from '#validators/product'
+import { PostProductForm, PutProductForm } from '#validators/product'
 import { cuid } from '@adonisjs/core/helpers';
 
 import type { HttpContext } from '@adonisjs/core/http'
 import app from '@adonisjs/core/services/app';
 
-
-import fs from "fs"
-import JSZip from "jszip";
 export default class ProductsController {
-    Get = async ({ request,response, auth }: HttpContext) => {
+    Get = async ({ request, response, auth }: HttpContext) => {
         const payload = request.qs()
         let product = Product.query().preload('category')
-        
-        if(payload.categoryid!== 'undefined' && payload.categoryid){
+
+        if (payload.categoryid !== 'undefined' && payload.categoryid) {
             product.where('category_id', payload.categoryid)
-    
+
         }
-       
-    
-        if(payload.page!== 'undefined' && payload.page){
+
+        if (payload.productname !== 'undefined' && payload.productname) {
+            console.log(payload.productname)
+            product.whereRaw('LOWER(name) LIKE ?', [`%${payload.productname}%`])
+        }
+
+        if (payload.page !== 'undefined' && payload.page) {
             product.paginate(payload.page, 5)
-    
+
         }
         let product1 = await product
-
+        console.log(product1)
         return response.send(product1)
     }
 
@@ -47,11 +48,11 @@ export default class ProductsController {
         product.name = payload.name
         product.categoryId = payload.categoryid
         product.price = payload.price
-      
-        await payload.image.move(app.makePath('public/uploads'))
-        let filename = (payload.image.fileName||"")
 
-        product.image = "uploads/"+filename
+        await payload.image.move(app.makePath('public/uploads'))
+        let filename = (payload.image.fileName || "")
+
+        product.image = "uploads/" + filename
         await product.save()
         return product
     }
@@ -71,14 +72,14 @@ export default class ProductsController {
         product.categoryId = payload.categoryid
         product.description = payload.description || ""
         product.price = payload.price
-        
-        if(payload.image){
+
+        if (payload.image) {
             await payload.image.move(app.makePath('public/uploads'))
-            let filename = (payload.image.fileName||"")
-    
-            product.image = "uploads/"+filename
+            let filename = (payload.image.fileName || "")
+
+            product.image = "uploads/" + filename
         }
-     
+
         await product.save()
 
         return product

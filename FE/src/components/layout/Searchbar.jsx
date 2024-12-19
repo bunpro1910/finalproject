@@ -38,7 +38,7 @@ function SearchBar() {
     }
     const handleSearch = (e) => {
         e.preventDefault()
-        navigate('/search?proname=' + search)
+        window.location.href=('/search/'+search)
     }
 
 
