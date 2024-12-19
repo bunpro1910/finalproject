@@ -10,7 +10,6 @@ import { Button, MenuItem, Select } from '@mui/material';
 import SelectRole from '../ui/SelectRole';
 import UserService from '@/services/UserService';
 import { toast } from 'react-toastify';
-import SelectFac from '../ui/SelectCate';
 
 
 export default function CreateUser() {
