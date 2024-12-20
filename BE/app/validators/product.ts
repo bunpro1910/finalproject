@@ -12,7 +12,7 @@ export const PostProductForm = vine.compile(
     vine.object({
         // file:vine.file({extnames:['png','jpg','docs']}),
         name:vine.string(),
-        description:vine.string(),
+        description:vine.string().optional().nullable(),
         price:vine.number(),
         image:vine.file({extnames:['png','jpg']}),
         categoryid:vine.number().exists(exists(Category.table,Category.primaryKey)),
@@ -26,7 +26,7 @@ export const PutProductForm = vine.compile(
     vine.object({
         // file:vine.file({extnames:['png','jpg','docs']}),
         name:vine.string(),
-        description:vine.string(),
+        description:vine.string().optional().nullable(),
         price:vine.number(),
         image:vine.file({extnames:['png','jpg']}).nullable().optional(),
         categoryid:vine.number().exists(exists(Category.table,Category.primaryKey)),

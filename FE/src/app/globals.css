@@ -1,10 +1,16 @@
 .css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input{
-    height: 50px !important;
+    height: 40px !important;
+}
+.searchbar .MuiInputBase-input{
+    height: 40px !important;
 }
 
 .checkoutform .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root{
     color:white !important;
 }
 .checkoutform .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root{
+    color:white !important;
+}
+.checkoutform .MuiInputBase-input{
     color:white !important;
 }

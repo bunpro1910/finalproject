@@ -80,7 +80,7 @@ function SearchBar() {
                         {/* <button onClick={(e) => { setShowcate(!showcate) }} type="" className='flex items-center '><AiOutlineMenu className="mr-4" /> Category List</button>
                     {showcate ? <Category setShowcate={setShowcate} /> : ""} */}
                     </div>}
-                    <form className='w-3/6 form-control rounded-xl ml-6 flex items-center ' onSubmit={handleSearch}>
+                    <form className='w-3/6 form-control rounded-xl ml-6 flex items-center searchbar ' onSubmit={handleSearch}>
                         <div className='flex h-[50px]  w-full'>
                             <label for="" className='text-2xl mx-1 flex items-center'><AiOutlineSearch /></label>
                             {!data ? <>...loading</> :
@@ -99,7 +99,7 @@ function SearchBar() {
                                                 <img
                                                     loading="lazy"
                                                     width="20"
-                                                    src={`${option.image}`}
+                                                    src={`/${option.image}`}
                                                     alt=""
                                                 />
                                                 {option.label} {option.name} (category {option.category.name})

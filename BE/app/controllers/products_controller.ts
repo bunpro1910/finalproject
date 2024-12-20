@@ -26,7 +26,7 @@ export default class ProductsController {
 
         }
         let product1 = await product
-        console.log(product1)
+        
         return response.send(product1)
     }
 

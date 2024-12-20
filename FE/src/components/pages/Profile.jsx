@@ -38,7 +38,7 @@ export default function Profile() {
     return (
         <form onSubmit={onSubmit} className='mx-[200px] py-[200px]'>
             <input type="hidden" name="password" value={user?.password} />
-            <input type="hidden" name="facultyid" value={user?.faculty[0]?.id} />
+
             <input type="hidden" name="role" value={user?.role?.id} />
             <Grid container spacing={3} >
                 <Grid item xs={12} md={6} className='flex !flex-col' >
@@ -69,20 +69,7 @@ export default function Profile() {
                         defaultValue={user?.email}
                     />
                 </Grid> 
-                <Grid item xs={12} md={6} className='flex !flex-col'>
-                    <FormLabel htmlFor="name" required>
-                        Faculty
-                    </FormLabel>
-                    <OutlinedInput
-                        id="name"
-                        name="faculty"
-                        type="text"
-                        placeholder="enter name"
-                        autoComplete="name"
-                        readOnly
-                        defaultValue={user?.faculty[0]?.name}
-                    />
-                </Grid>
+               
                 <Grid item xs={12} md={6} className='flex !flex-col'>
                     <FormLabel htmlFor="name" required>
                         Role
